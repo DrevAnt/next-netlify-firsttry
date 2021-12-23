@@ -10,12 +10,13 @@ const Intro = () => {
 
       <div className={styles.card}>
         <h1 className={styles.title}>
-          Hello, I'm <br />
+          Hello, I&apos;m <br />
           <span className={styles.brandName}>Your Brand </span>
         </h1>
         <p className={styles.desc}>
           Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text.
+          industry. Lorem Ipsum has been the industry&apos;s standard dummy
+          text.
         </p>
         <Link href="/contact" passHref>
           <button className={styles.button}>Contact Us</button>
