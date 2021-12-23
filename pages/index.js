@@ -1,23 +1,27 @@
-import Head from 'next/head'
-import Header from '@components/Header'
-import Footer from '@components/Footer'
+import Head from "next/head";
+import { data } from "../data";
+import styles from "../styles/Home.module.css";
+import Intro from "../components/Intro";
+import Services from "../components/Services";
+import Testimonials from "../components/Testimonials";
 
-export default function Home() {
+export default function Home({ services }) {
   return (
-    <div className="container">
+    <div className={styles.container}>
       <Head>
-        <title>Next.js Starter!</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Nextjs website</title>
+        <meta name="description" content="Nextjs website" />
       </Head>
-
-      <main>
-        <Header title="Welcome to my app!" />
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
-      </main>
-
-      <Footer />
+      <Intro />
+      <Services services={services} />
+      <Testimonials />
     </div>
-  )
+  );
 }
+
+export const getStaticProps = () => {
+  const services = data;
+  return {
+    props: { services },
+  };
+};
